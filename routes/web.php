@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//投稿フォームページ
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/document', 'DocumentsController@showCreateForm')->name('documents.create');
+    Route::post('/document', 'DocumentsController@create');
+});
+//投稿確認ページ
+Route::get('/document/{document}', 'DocumentsController@detail')->name('documents.detail');
