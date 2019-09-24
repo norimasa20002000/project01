@@ -27,4 +27,11 @@ class CreateDocument extends FormRequest
             'title' => 'required',
         ];
     }
+
+    public function attributes()
+    {
+        return [
+       'title' => 'タイトル',
+   ];
+    }
 }

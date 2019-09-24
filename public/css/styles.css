@@ -1,0 +1,35 @@
+body,
+.form {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: silver;
+}
+a:hover {
+  color: black;
+}
+footer {
+  background-color: gray;
+}
+.error {
+  font-size: 15px;
+  color: tomato;
+}
+.footer-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+.footer-wrapper a {
+  color: silver;
+}
+.footer-wrapper a:hover {
+  color: white;
+}
+.fas {
+  font-size: 40px;
+}

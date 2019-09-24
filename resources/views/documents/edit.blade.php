@@ -9,27 +9,31 @@
     </ul>
 </div>
 @endif
-<form method="post" action="{{ route('documents.create') }}" enctype="multipart/form-data" class="form">
+<!-- <form method="post" action="{{ route('documents.create') }}" enctype="multipart/form-data" class="form"> -->
+
+
+<form method="post" action="{{ url('/document', $document->id) }}" enctype="multipart/form-data" class="form">
     {{ csrf_field() }}
-    <div class="form-image_url">
+    {{ method_field('patch') }}
+    <!-- <div class="form-image_url">
         <input type="file" name="image_url">
-    </div>
+    </div> -->
 
     <div class="form">
         <div class="form-title">
             <label for="title"></label>
             </br>
-            <input class="" name="title" value="{{ old('title') }}" placeholder="書類名">
+            <input class="" name="title" value="{{ old('title', $document->title) }}" placeholder="書類名">
         </div>
 
         <div class="form-content">
             <label for="content" class="form-content"></label>
             </br><textarea class="" name="content" cols="45" rows="5"
-                placeholder="格納場所/内容">{{ old('content') }}</textarea>
+                placeholder="格納場所/内容">{{ old('content',$document->content) }}</textarea>
         </div>
 
         <div class="form-submit">
-            <button type="submit">登録する</button>
+            <button type="submit" value="Update">アップデート</button>
         </div>
     </div>
 </form>
