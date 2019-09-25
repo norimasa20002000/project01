@@ -13,6 +13,11 @@
         <a href="{{$document->id}}">書類名：{{$document->title}}</a>
         <a href="{{$document->id}}">登録日：{{$document->created_at}}</a>
         <a href="{{action('DocumentsController@edit',$document)}}" class="edit">[編集]</a>
+        <a href="#" class="del" data-id="{{ $document->id }}">[削除]</a>
+        <form method="post" action="{{ url('/document', $document->id) }}" id="form_{{ $document->id }}">
+            {{ csrf_field() }}
+            {{ method_field('delete') }}
+        </form>
     </li>
     @endif
 
@@ -23,4 +28,5 @@
     @endforelse
 
 </ul>
+<script src="/js/main.js"></script>
 @endsection

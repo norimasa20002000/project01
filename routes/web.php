@@ -37,3 +37,6 @@ Route::get('/document/{document}/edit', 'DocumentsController@edit')->name('docum
 
  //アップデート
 Route::patch('/document/{document}', 'DocumentsController@update');
+
+//削除
+Route::delete('/document/{document}', 'DocumentsController@destroy');

@@ -89,4 +89,11 @@ class DocumentsController extends Controller
         //    ]);
         return redirect("document/index");
     }
+
+    //削除
+    public function destroy(Document $document)
+    {
+        $document->delete();
+        return redirect('document/index');
+    }
 }
