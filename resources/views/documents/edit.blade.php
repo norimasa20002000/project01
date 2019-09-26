@@ -1,5 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app3')
 @section('content')
+@include('layouts.footer')
 @if($errors->any())
 <div class="error">
     <ul>
