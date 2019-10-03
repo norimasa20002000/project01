@@ -13,7 +13,7 @@
 <form method="post" action="{{ route('documents.create') }}" enctype="multipart/form-data" class="form">
     {{ csrf_field() }}
     <div class="form-image_url">
-        <input type="file" name="image_url">
+        <input type="file" name="image_url" id="image">
     </div>
 
     <div class="form">
